@@ -29,13 +29,12 @@ services:
         target: /etc/config/config.yaml
     networks:
       - intranet
-      - caddy_network
     environment:
       - PASSWORD_ENABLED
   postgresd:
     image: postgres:12-alpine
     ports:
-      - "5432:5432"
+      - "5431:5431"
     environment:
       - POSTGRES_USER=hanko
       - POSTGRES_PASSWORD=hanko
@@ -54,7 +53,6 @@ services:
       - "9500:80"
     networks:
       - intranet
-      - caddy_network
   quickstart:
     build: ../../quickstart
     ports:
@@ -74,8 +72,5 @@ services:
       - '8085:8085'
     networks:
       - intranet
-      - caddy_network
 networks:
   intranet:
-  caddy_network:
-    external: true
