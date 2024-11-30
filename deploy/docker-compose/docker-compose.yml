@@ -64,7 +64,6 @@ services:
       - HANKO_FRONTEND_SDK_URL=http://localhost:9500/sdk.modern.js
     networks:
       - intranet
-      - caddy_network
   mailslurper:
     image: marcopas/docker-mailslurper:latest
     ports:
