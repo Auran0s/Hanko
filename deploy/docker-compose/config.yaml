@@ -17,7 +17,7 @@ service:
 webauthn:
   relying_party:
     origins:
-      - "http://localhost:8888"
+      - "https://hanko.victorbeysseriat.fr"
 session:
   cookie:
     secure: false # is needed for safari, because safari does not store secure cookies on localhost
@@ -25,4 +25,4 @@ server:
   public:
     cors:
       allow_origins:
-        - "http://localhost:8888"
+        - "https://hanko.victorbeysseriat.fr"
